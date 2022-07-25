@@ -1,6 +1,6 @@
-from modules import create_zip, extract_zip_to, read_xlsx, read_pdf, read_csv
+from modules import create_zip, extract_zip_to, read_xlsx, read_pdf, read_csv, archive_path
 
-create_zip('resources/archive.zip')
+create_zip(archive_path)
 
 
 def test_zip():

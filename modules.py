@@ -6,6 +6,7 @@ from PyPDF2 import PdfReader
 from openpyxl import load_workbook
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
+archive_path = current_directory + '/resources/archive.zip'
 pdf = current_directory + '/tmp/selene-readthedocs-io-en-latest.pdf'
 xlsx = current_directory + '/tmp/file_example_XLSX_50.xlsx'
 csv_ = current_directory + '/tmp/username.csv'
@@ -20,9 +21,9 @@ def create_zip(path):
     return shutil.rmtree(current_directory + '/tmp')
 
 
-def extract_zip_to(to):
-    zip_ = ZipFile(current_directory + '/resources/archive.zip')
-    zip_.extractall(to)
+def extract_zip_to(path):
+    zip_ = ZipFile(archive_path)
+    zip_.extractall(path)
     zip_.close()
 
 
