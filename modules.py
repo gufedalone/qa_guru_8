@@ -13,6 +13,10 @@ csv_ = current_directory + '/tmp/username.csv'
 
 
 def create_zip(path):
+
+    if not os.path.exists(current_directory + '/resources'):
+        os.mkdir(current_directory + '/resources')
+
     zip_ = ZipFile(path, 'w')
     zip_.write(pdf, os.path.basename(pdf))
     zip_.write(xlsx, os.path.basename(xlsx))
